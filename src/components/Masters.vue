@@ -53,7 +53,7 @@
 
 <style scoped>
 
-  .master_hub{
+  .masters{
     margin-top: 1rem;
     border-style: solid;
     border-width: medium;

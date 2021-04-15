@@ -1,6 +1,6 @@
 <template>
   <div class="masters">
-    <b-table striped hover :items="items" :fields="fields"></b-table>
+    <b-table responsive striped head-row-variant="dark" hover :items="items" :fields="fields"></b-table>
   </div>
 </template>
 
@@ -53,8 +53,10 @@
 
 <style scoped>
 
-  .masters{
+  .master_hub{
     margin-top: 1rem;
+    border-style: solid;
+    border-width: medium;
   }
 
 </style>

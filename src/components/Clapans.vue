@@ -1,6 +1,6 @@
 <template>
   <div class="clapans">      
-    <b-table responsive hover :items="items" :fields="fields">
+    <b-table responsive striped head-row-variant="dark"  hover ref="my-table" :items="items" :fields="fields">
       <template v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')" class="mr-2">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -14,10 +14,23 @@
                 :key="`detail-${i}`"
                 class="mb-2"
               >
-              <b-col sm="5" class="text-sm-right"
-              >{{ detail }}: {{ row.item[detail] }}
+              <b-col sm="2" class="text-sm-right"
+              >Статус: {{ row.item[detail] }}
               </b-col>
+
+              <b-button  size="sm-3" class="mr-2" @click="rowOn(row.item)" >Включить</b-button>
+              <b-button  size="sm-3" class="mr-2" @click="rowOff(row.item)" >Отключить</b-button>
+              <b-button  size="sm-3" class="mr-2">Поменять</b-button>
               </b-row>
+              <b-form-textarea
+                    id="textarea"
+                
+                    placeholder="Комментировать..."
+                    size="sm-2"
+                    rows="2"
+                    max-rows="4"
+                  ></b-form-textarea>
+                  <b-button  size="sm-3" class="mr-2">Добавить комментарий</b-button>
             </b-card>
           </template>
     </b-table>
@@ -89,14 +102,14 @@
           }
         ],
         items: [
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"}
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'danger', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'danger', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'danger', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1521544',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"}
       
         ]
   }
@@ -105,9 +118,17 @@
     toggleRowDetails(row, data) {
       this.detailsMask = data.split(', ')
       row.toggleDetails()
-    }
-  }
+    },
+    rowOn(item) {
+      this.$set(item, "_rowVariant", "success");
+      this.items.status
+    },
+    rowOff(item) {
+      this.$set(item, "_rowVariant", "danger");
+    },
   
+  }
+
   }
 </script>
 
@@ -119,9 +140,11 @@
     border-width: medium;
   }
 
-  table{
-    background-color: blue;
-    padding: 1rem;
-  }
+
+
+  .table-striped>tr:nth-child(odd){
+   color: brown;
+}
+
 
 </style>

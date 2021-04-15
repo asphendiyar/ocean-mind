@@ -3,7 +3,7 @@
         <b-navbar type="">
 
             <b-navbar-nav class="first">
-                <b-nav-item active-class="active" to="clapans" exact>Клапаны</b-nav-item>
+                <b-nav-item active-class="active" to="/" exact>Клапаны</b-nav-item>
                 
                 <b-nav-item active-class="active" href="masters" exact>Мастера</b-nav-item>
 

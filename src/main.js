@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
@@ -12,7 +12,7 @@ import Masters from './components/Masters.vue'
 import MasterHub from './components/MasterHub.vue' 
 
 const routes = [{
-    path: '/clapans',
+    path: '/',
     component: Clapans
   },
   {

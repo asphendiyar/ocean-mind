@@ -59,17 +59,17 @@
                     <b-form-select  :options="house"></b-form-select>
                     <b-form-select  :options="podezd"></b-form-select>
                     <b-form-select  :options="id_masterhub"></b-form-select>
-                    <b-button>Добавить Мастер Хаб</b-button>
+                    <b-button squared variant="info">Добавить Мастер Хаб</b-button>
                 </div>
                 <div>
                     <h1>Мастер</h1>
                     <b-form-select  :options="city"></b-form-select>
                     <b-form-select  :options="raion"></b-form-select>
-                    <b-button>Добавить Мастер</b-button>
+                    <b-button squared variant="info">Добавить Мастер</b-button>
                 </div>
                 <div>
                     <h1>Клапан</h1>
-                    <b-button>Добавить Клапан</b-button>
+                    <b-button squared variant="info">Добавить Клапан</b-button>
                 </div>
             </div>
         </b-modal>

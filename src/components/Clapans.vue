@@ -1,4 +1,6 @@
 <template>
+  <div>
+  <Navigation/>
   <div class="clapans">      
     <b-table responsive striped head-row-variant="dark"  hover ref="my-table" :items="items" :fields="fields">
       <template v-slot:cell(actions)="row">
@@ -35,10 +37,15 @@
           </template>
     </b-table>
   </div>
+  </div>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation.vue'
+
   export default {
+    name: 'Clapans',
+    components: {Navigation},
     data() {
       return {  
         detailsMask: [],

@@ -2,7 +2,6 @@
   <div id="app">
     <b-container >
       <Navbar/>
-      <Navigation/>
       <router-view></router-view>
     </b-container >
   </div>
@@ -10,15 +9,15 @@
 
 <script>
 import Navbar from './components/Navbar.vue'
-import Navigation from './components/Navigation.vue'
-
 export default {
-  components: { Navbar, Navigation},
+  components: { Navbar},
   name: 'App',
   
 }
 </script>
 
 <style>
-
+  *{
+    font-family: 'Montserrat', sans-serif;
+  }
 </style>

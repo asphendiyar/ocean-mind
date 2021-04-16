@@ -1,11 +1,18 @@
 <template>
+<div>
+  <Navigation/>
   <div class="master_hub">
     <b-table responsive striped head-row-variant="dark" hover :items="items" :fields="fields"></b-table>
   </div>
+</div>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation.vue'
+
   export default {
+    name: 'MasterHub',
+    components: {Navigation},
     data() {
       return {  
         fields: [

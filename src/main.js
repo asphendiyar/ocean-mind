@@ -10,6 +10,7 @@ Vue.use(VueRouter);
 import Clapans from './components/Clapans.vue' 
 import Masters from './components/Masters.vue' 
 import MasterHub from './components/MasterHub.vue' 
+import Settings from './components/Settings.vue'
 
 const routes = [{
     path: '/',
@@ -23,7 +24,10 @@ const routes = [{
     path: '/masterhub',
     component: MasterHub
   },
-  
+  {
+    path: '/settings',
+    component: Settings
+  },
 ]
 
 const router = new VueRouter({

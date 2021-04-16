@@ -9,11 +9,11 @@
 
                 <b-nav-item active-class="active" to="masterhub" exact>Мастер Хабы</b-nav-item>
 
-                <b-nav-item active-class="active" to="edit" exact>Настройки</b-nav-item>      
+                <b-nav-item active-class="active" to="settings" exact>Настройки</b-nav-item>      
             </b-navbar-nav>
 
             <b-navbar-nav class="ml-auto">
-                <b-nav-item href="#"><b-icon icon="person-fill"></b-icon> Войти </b-nav-item>
+                <b-nav-item to=""><b-icon icon="person-fill"></b-icon> Войти </b-nav-item>
             </b-navbar-nav>
         </b-navbar>
     </div>

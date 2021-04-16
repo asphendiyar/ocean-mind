@@ -4,35 +4,21 @@
         <b-navbar class="mx-auto">
             <b-navbar-nav >
 
-            <b-nav-item-dropdown  text="Город">
-                <b-dropdown-item href="#">Алматы</b-dropdown-item>
-                <b-dropdown-item href="#">Нурсултан</b-dropdown-item>
-                <b-dropdown-item href="#">Шымкент</b-dropdown-item>
-                <b-dropdown-item href="#">Павлодар</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-form-select class="settings" :value="null" :options="city"></b-form-select>
 
-            <b-nav-item-dropdown  text="Район" >
-                <b-dropdown-item href="#">Есиль</b-dropdown-item>
-                <b-dropdown-item href="#">Абай</b-dropdown-item>
-                <b-dropdown-item href="#">Алатау</b-dropdown-item>
-                <b-dropdown-item href="#">Медеу</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-form-select class="settings" :value="null" :options="raion"></b-form-select> 
 
-            <b-nav-item-dropdown  text="Улица" >
-                <b-dropdown-item href="#">Абай</b-dropdown-item>
-                <b-dropdown-item href="#">Кабанбай</b-dropdown-item>
-                <b-dropdown-item href="#">Сатпаев</b-dropdown-item>
-                <b-dropdown-item href="#">Республика</b-dropdown-item>
-            </b-nav-item-dropdown>
-            
-            <b-nav-item-dropdown  text="Дом" >   
-                <b-dropdown-item href="#">1</b-dropdown-item>
-                <b-dropdown-item href="#">2</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <b-form-select class="settings" :value="null" :options="street"></b-form-select>
+        
+            <b-form-select class="settings" :value="null" :options="house"></b-form-select>
             
             <b-button size="sm" class="my-1" type="submit">Включить все</b-button>
 
-            <b-button v-b-modal.modal-xl size="sm" class="my-1" type="submit">Добавить</b-button>
+            <b-nav-item-dropdown text="Добавить" class="settings" >   
+                <b-dropdown-item v-b-modal.modal1>Мастер Хаб</b-dropdown-item>
+                <b-dropdown-item v-b-modal.modal2>Мастер</b-dropdown-item>
+                <b-dropdown-item v-b-modal.modal3>Клапан</b-dropdown-item>
+            </b-nav-item-dropdown>
         
             <b-nav-form>
                 <b-nav-item-dropdown  text="Все" >   
@@ -43,33 +29,41 @@
                     <b-dropdown-item href="#">Дом</b-dropdown-item>
                 </b-nav-item-dropdown>
                 
-                <b-form-input  placeholder="Search"></b-form-input>
+                <b-form-input  placeholder="Поиск..."></b-form-input>
             </b-nav-form>
             
             
             </b-navbar-nav>
         </b-navbar>
-        <b-modal id="modal-xl" size="xl" title="Добавить">
+        <b-modal id="modal1" size="xl" title="Добавить Мастер Хаб" hide-footer>
             <div class="content">
                 <div>
                     <h1>Мастер Хаб</h1>
-                    <b-form-select  :options="city">Город</b-form-select>
-                    <b-form-select  :options="raion"></b-form-select>
-                    <b-form-select  :options="street"></b-form-select>
-                    <b-form-select  :options="house"></b-form-select>
-                    <b-form-select  :options="podezd"></b-form-select>
-                    <b-form-select  :options="id_masterhub"></b-form-select>
-                    <b-button squared variant="info">Добавить Мастер Хаб</b-button>
+                    <b-form-select :value="null" :options="city"></b-form-select>
+                    <b-form-select :value="null" :options="raion"></b-form-select>
+                    <b-form-select :value="null" :options="street"></b-form-select>
+                    <b-form-select :value="null" :options="house"></b-form-select>
+                    <b-form-select :value="null" :options="podezd"></b-form-select>
+                    <b-button squared variant="info" @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
                 </div>
+            </div>
+        </b-modal>
+        <b-modal id="modal2" size="xl" title="Добавить Мастер" hide-footer>
+            <div class="content">
                 <div>
                     <h1>Мастер</h1>
-                    <b-form-select  :options="city"></b-form-select>
-                    <b-form-select  :options="raion"></b-form-select>
-                    <b-button squared variant="info">Добавить Мастер</b-button>
+                    <b-form-select :value="null" :options="podezd"></b-form-select>
+                    <b-form-select :value="null" :options="id_masterhub"></b-form-select>
+                    <b-button squared variant="info" @click="openModal('Мастер'); $bvModal.hide('modal2')">Добавить Мастер</b-button>
                 </div>
+            </div>
+        </b-modal>
+        <b-modal id="modal3" size="xl" title="Добавить Клапан" hide-footer>
+            <div class="content">
                 <div>
                     <h1>Клапан</h1>
-                    <b-button squared variant="info">Добавить Клапан</b-button>
+                    <b-form-select :value="null" :options="id_master"></b-form-select>
+                    <b-button squared variant="info" @click="openModal('Клапан'); $bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
         </b-modal>
@@ -82,12 +76,76 @@ export default {
     data(){
         return{
         city: [
-          { value: null,selected: true, text: 'Алматы' },
+          { value: null, text: 'Город', disabled: true  },
           { value: 'a', text: 'Нурсултан' },
           { value: 'b', text: 'Шымкент' },
           { value: 'c', text: 'Павлодар' },
+        ],
+        raion: [
+          { value: null, text: 'Район', disabled: true  },
+          { value: 'a', text: 'Есиль' },
+          { value: 'b', text: 'Алматинский' },
+          { value: 'c', text: 'Сарыаркинский' },
+        ],
+        street: [
+          { value: null, text: 'Улица', disabled: true  },
+          { value: 'a', text: 'Кабанбай батыра' },
+          { value: 'b', text: 'Абай' },
+          { value: 'c', text: 'Республика' },
+        ],
+        house: [
+          { value: null, text: 'Дом', disabled: true  },
+          { value: 'a', text: '51' },
+          { value: 'b', text: '32' },
+          { value: 'c', text: '33' },
+        ],
+        podezd: [
+          { value: null, text: 'Подъезд', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        id_masterhub: [
+          { value: null, text: 'ID Мастер Хаба', disabled: true  },
+          { value: 'a', text: '180107066' },
+          { value: 'b', text: '180107235' },
+          { value: 'c', text: '180156813' },
+        ],
+        id_master: [
+          { value: null, text: 'ID Мастер Хаба', disabled: true  },
+          { value: 'a', text: '103258852' },
+          { value: 'b', text: '103693693' },
+          { value: 'c', text: '103369746' },
         ]
     }
+    },
+    methods: {
+        openModal(message) {
+            const modalTimeoutSeconds = 1.5;
+            const modalId = "modal_id"
+            let modalSetTimeout = null;      
+
+            this.$bvModal.msgBoxConfirm(`${message} успешно добавлен`, {
+                id: modalId
+            })
+            .then(wasOkPressed => {
+                if(wasOkPressed) {
+                /* Do something */
+                } else {
+                /* Do something else */
+                }
+            })
+            .catch(() => {
+                console.log('The modal closed unexpectedly')
+            })
+            .finally(() => {
+                clearTimeout(modalSetTimeout)
+            })
+            
+            modalSetTimeout = setTimeout(() => {
+                this.$bvModal.hide(modalId)
+            }, modalTimeoutSeconds * 1000)
+            }
     }
 }
 </script>
@@ -103,6 +161,7 @@ button{
     margin-top: 1rem;
     background-color: #0e3c53;
     color: white;
+    border-radius: 0;
 }
 
 .content div{
@@ -111,11 +170,15 @@ button{
 .navigation{
     margin-top: 3rem;
 }
-footer{
-    display: none;
-}
 select{
     margin-top: 1rem;
+}
+
+.settings{
+    margin: 0;
+    width: 10%;
+    background-color: #c6d8e0;
+    border-radius: 0;
 }
 nav ul{
     width: 100%;

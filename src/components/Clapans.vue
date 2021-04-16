@@ -2,7 +2,7 @@
   <div>
   <Navigation/>
   <div class="clapans">      
-    <b-table responsive striped head-row-variant="dark"  hover ref="my-table" :items="items" :fields="fields">
+    <b-table responsive striped sticky-header="800px" no-border-collapse head-row-variant="dark"  hover ref="my-table" :items="items" :fields="fields">
       <template v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')" class="mr-2">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -146,12 +146,5 @@ import Navigation from '@/components/Navigation.vue'
     border-style: solid;
     border-width: medium;
   }
-
-
-
-  .table-striped>tr:nth-child(odd){
-   color: brown;
-}
-
-
+  
 </style>

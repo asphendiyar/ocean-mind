@@ -21,13 +21,13 @@
         </ul>
         <ul>
             <li>
-                <b-form-select v-model="selected" :options="options"></b-form-select>
+                <b-form-select v-model="selected" :options="city"></b-form-select>
             </li>
             <li>
-                <b-form-select v-model="selected" :options="options"></b-form-select>
+                <b-form-select v-model="selected" :options="raion"></b-form-select>
             </li>
             <li>
-                <b-form-select v-model="selected" :options="options"></b-form-select>
+                <b-form-select v-model="selected" :options="street"></b-form-select>
             </li>
             <li class="date">
                 <h3>с</h3>
@@ -49,8 +49,23 @@
     data() {
       return {
         selected: null,
-        options: [
-          { value: null, text: 'Please select an option' }
+         city: [
+          { value: null, text: 'Город' },
+          { value: 'a', text: 'Нурсултан' },
+          { value: 'b', text: 'Шымкент' },
+          { value: 'c', text: 'Павлодар' },
+        ],
+        raion: [
+          { value: null, text: 'Район' },
+          { value: 'a', text: 'Есиль' },
+          { value: 'b', text: 'Алматинский' },
+          { value: 'c', text: 'Сарыаркинский' },
+        ],
+        street: [
+          { value: null, text: 'Улица' },
+          { value: 'a', text: 'Кабанбай батыра' },
+          { value: 'b', text: 'Абай' },
+          { value: 'c', text: 'Республика' },
         ]
       }
     }

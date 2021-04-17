@@ -23,9 +23,10 @@
               </b-row>
               
               <b-row>
-              <b-button  size="sm-3"  class="onButton"  @click="rowOn(row.item)" >Включить</b-button>
-              <b-button  size="sm-3"  class="offButton"  @click="rowOff(row.item)" >Отключить</b-button>
-              <b-button  size="sm-3" class="mr-2" @click="changeId(row.item)" >Поменять</b-button>
+              <b-button  size="sm-3"  class="onButton"  @click="rowOn(row.item); addHistory()" >Включить</b-button>
+              <b-button  size="sm-3"  class="offButton"  @click="rowOff(row.item); addHistory()" >Отключить</b-button>
+              <b-button  size="sm-3" class="mr-2" @click="changeId(row.item); addHistory()" >Поменять</b-button>
+              <b-button  size="sm-3" class="mr-2" @click="changeId(row.item); addHistory()" >Загрузить Историю</b-button>
               </b-row>
               <b-row>
                 <div class="comment">
@@ -40,6 +41,11 @@
                   ></b-form-textarea>
                   <b-button class="addComment" size="sm">Добавить комментарий</b-button>
                 </div>
+              </b-row>
+               <b-row>
+                 <h3>История:</h3>
+                 <br>
+                <p v-for="h in history" :key="h">{{h}}, <br></p>
               </b-row>
               </div>
             </b-card>
@@ -57,6 +63,7 @@ import Navigation from '@/components/Navigation.vue'
     components: {Navigation},
     data() {
       return {  
+        history:[],
         count: "",
         detailsMask: [],
         fields: [
@@ -156,6 +163,10 @@ import Navigation from '@/components/Navigation.vue'
     },
     turnOnAllHere(data){
       this.count = data;
+    }, 
+    
+    addHistory(){
+      this.history.push("Изменение 1")
     }
   
   }
@@ -206,6 +217,9 @@ import Navigation from '@/components/Navigation.vue'
     margin-left: 1rem;
   }
 
+  p{
+    margin-top: 1rem;
+  }
   #myTable thead {
           background-color: #0361cc; 
           color:white;

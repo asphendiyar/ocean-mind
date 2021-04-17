@@ -12,14 +12,14 @@
         
             <b-form-select class="settings" :value="null" :options="house"></b-form-select>
             
-            <b-button size="sm"  v-b-modal.modalOn class="onAll">Включить все</b-button>
+            <b-button size="sm"  v-b-modal.modalOn class="onAll" >Включить все</b-button>
 
             <b-modal id="modalOn" size="md" hide-footer >
                 <div >
                     <h5>Вы действительно хотите включить все?</h5>
                     <div class="knopki">
                         <b-button size="md"  @click="$bvModal.hide('modalOn')"> Отмена </b-button>
-                        <b-button size="md" >Да</b-button>
+                        <b-button size="md" @click="$bvModal.hide('modalOn'); turnOnAll()">Да</b-button>
                     </div>
                 </div>
         </b-modal>
@@ -155,7 +155,10 @@ export default {
             modalSetTimeout = setTimeout(() => {
                 this.$bvModal.hide(modalId)
             }, modalTimeoutSeconds * 1000)
-            }
+            },
+        turnOnAll(){
+            this.$emit('turnOnAll', "Включил...")
+        }
     }
 }
 </script>

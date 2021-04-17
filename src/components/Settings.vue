@@ -41,7 +41,7 @@
         </ul>
 
     </div>
-        <b-button  size="sm-3">Сохранить</b-button>
+        <b-button squared size="sm-3">Сохранить</b-button>
     </div>
     
 </template>

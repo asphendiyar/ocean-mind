@@ -49,7 +49,7 @@ nav{
     height: 1px;
     position: absolute;
     width: 100%;
-    background: #808080;
+    background: white;
     content: '';
     top: 0;
 }
@@ -57,7 +57,7 @@ nav{
     height: 1px;
     position: absolute;
     width: 100%;
-    background: #808080;
+    background: white;
     content: '';
     bottom: 0;
 }

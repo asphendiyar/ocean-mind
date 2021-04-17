@@ -3,7 +3,7 @@
     <h1>{{count}}</h1> 
   <Navigation @turnOnAll="turnOnAllHere" />
   <div class="clapans">     
-    <b-table responsive striped sticky-header="800px" no-border-collapse head-row-variant="dark" ref="my-table" :items="items" :fields="fields">
+    <b-table responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
       <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -23,8 +23,8 @@
               </b-row>
               
               <b-row>
-              <b-button  size="sm-3" class="mr-2" variant="success" @click="rowOn(row.item)" >Включить</b-button>
-              <b-button  size="sm-3" class="mr-2" variant="danger" @click="rowOff(row.item)" >Отключить</b-button>
+              <b-button  size="sm-3"  class="onButton"  @click="rowOn(row.item)" >Включить</b-button>
+              <b-button  size="sm-3"  class="offButton"  @click="rowOff(row.item)" >Отключить</b-button>
               <b-button  size="sm-3" class="mr-2" @click="changeId(row.item)" >Поменять</b-button>
               </b-row>
               <b-row>
@@ -77,6 +77,10 @@ import Navigation from '@/components/Navigation.vue'
             label: 'Дом',
           },
           {
+            key: 'podezd',
+            label: 'Дом',
+          },
+          {
             key: 'etazh',
             label: 'Этаж',
           },
@@ -99,7 +103,7 @@ import Navigation from '@/components/Navigation.vue'
           },
           {
             key: 'type',
-            label: 'Лицо'
+            label: 'Физ. лицо/Юр. лицо'
           },
           {
             key: 'agreement_number',
@@ -111,25 +115,27 @@ import Navigation from '@/components/Navigation.vue'
           },
           {
             key: 'iin',
-            label: 'ИИН'
+            label: 'ИИН/БИН'
           },
           {
-            key: 'bin',
-            label: 'БИН'
+            key: 'payment',
+            label: 'Способ оплаты'
           }
+          
+
         ],
         items: [
-          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '158626',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'danger', isActive: true, city: "Нурсултан", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '3526215',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Шымкент", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '1616565',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Караганда", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '651652',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'danger', isActive: true, city: "Семей", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '65132156',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Уральск", raion: 'Райымбек', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '651621',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'danger', isActive: true, city: "Кокшетау", raion: 'Свобода', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '89456',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '"23423"',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Тараз", raion: 'Кордай', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '65451',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Тараз", raion: 'Чу', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '25245',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"}
+          {  isActive: true, city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2', etazh: '9', flat: '15',  id: '158626',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          { isActive: true, city: "Нурсултан", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '3526215',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Шымкент", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '1616565',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Караганда", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651652',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Семей", raion: 'Абай', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '65132156',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Уральск", raion: 'Райымбек', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651621',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Кокшетау", raion: 'Свобода', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '89456',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '"23423"',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Тараз", raion: 'Кордай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '65451',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+          {  isActive: true, city: "Тараз", raion: 'Чу', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '25245',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"}
           
         ]
   }
@@ -140,11 +146,9 @@ import Navigation from '@/components/Navigation.vue'
       row.toggleDetails()
     },
     rowOn(item) {
-      this.$set(item, "_rowVariant", "success");
       this.$set(item, "status", "включен")
     },
     rowOff(item) {
-      this.$set(item, "_rowVariant", "danger");
       this.$set(item, "status", "отключен")
     },
     changeId(item){
@@ -159,9 +163,16 @@ import Navigation from '@/components/Navigation.vue'
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   
+    $body-bg: #000;
+
+    $body-color: rgb(105, 62, 62);
+
+  @import "~bootstrap/scss/bootstrap.scss";
+  @import '~bootstrap-vue/dist/bootstrap-vue.css';
     
+    $red: #8f3333;
   
   .clapans{
     margin-top: 1rem;
@@ -171,11 +182,18 @@ import Navigation from '@/components/Navigation.vue'
  
   .card{
     margin-right: 1rem;
-    background-color: #6c7ae0;
+    background-color: #c4d3f6;
     border: none;
-    color: white;
   }
-  
+
+  .onButton{
+    margin-right: 1rem;
+    background-color: #629e6c;
+  }
+  .offButton{
+    margin-right: 1rem;
+    background-color: #f57575;
+  }
   
   .comment{
     display: flex;
@@ -187,4 +205,9 @@ import Navigation from '@/components/Navigation.vue'
   .information > div{
     margin-left: 1rem;
   }
+
+  #myTable thead {
+          background-color: #0361cc; 
+          color:white;
+       }
 </style>

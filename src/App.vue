@@ -20,4 +20,10 @@ export default {
   *{
     font-family: 'Montserrat', sans-serif;
   }
+  body{
+    background-color: #264da8;
+  }
+  .app{
+    background-color: #264da8;
+  }
 </style>

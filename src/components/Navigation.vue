@@ -24,13 +24,13 @@
                 </div>
         </b-modal>
 
-            <b-nav-item-dropdown text="Добавить" class="settings" >   
+            <b-nav-item-dropdown text="Добавить" class="add" >   
                 <b-dropdown-item v-b-modal.modal1>Мастер Хаб</b-dropdown-item>
                 <b-dropdown-item v-b-modal.modal2>Мастер</b-dropdown-item>
                 <b-dropdown-item v-b-modal.modal3>Клапан</b-dropdown-item>
             </b-nav-item-dropdown>
         
-            <b-nav-form>
+            <b-nav-form >
                 <b-nav-item-dropdown  text="Все" >   
                     <b-dropdown-item href="#"> Все </b-dropdown-item>
                     <b-dropdown-item href="#"> Город </b-dropdown-item>
@@ -168,6 +168,7 @@ export default {
 .content{
     display: flex;
     justify-content: space-evenly;
+    color: white;
 }
 
 .onAll{
@@ -186,7 +187,7 @@ h5{
 }
 button{
     margin-top: 1rem;
-    background-color: #0e3c53;
+    background-color: #6c7ae0;
     color: white;
     border-radius: 0;
 }
@@ -200,11 +201,15 @@ button{
 select{
     margin-top: 1rem;
 }
+.add{
+    background-color: #6c7ae0;
+    color: white;
+    border-radius: 0;
+}
 
 .settings{
     margin: 0;
     width: 10%;
-    background-color: #c6d8e0;
     border-radius: 0;
 }
 nav ul{
@@ -217,10 +222,10 @@ input{
 }
 
 nav>ul>li{
-    background-color: #e0d8c2;
-    color: black;
     font-weight: 500;
     border-radius: 5px;
+    background-color: #6c7ae0;
+    color: white;
 }
 
 </style>

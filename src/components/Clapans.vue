@@ -164,14 +164,16 @@ import Navigation from '@/components/Navigation.vue'
   .clapans{
     margin-top: 1rem;
     border-style: solid;
-    border-width: medium;
+    border-width: thin;
   }
  
   .card{
     margin-right: 1rem;
-    background-color: rgb(181, 194, 194);
+    background-color: #6c7ae0;
     border: none;
+    color: white;
   }
+  
   
   .comment{
     display: flex;

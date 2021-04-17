@@ -182,7 +182,6 @@ import Navigation from '@/components/Navigation.vue'
  
   .card{
     margin-right: 1rem;
-    background-color: #c4d3f6;
     border: none;
   }
 
@@ -206,8 +205,5 @@ import Navigation from '@/components/Navigation.vue'
     margin-left: 1rem;
   }
 
-  #myTable thead {
-          background-color: #0361cc; 
-          color:white;
-       }
+ 
 </style>

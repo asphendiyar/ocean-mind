@@ -29,8 +29,10 @@ export default {
 
 *{
     color: #777676;
-    font-weight: 500;
+    font-weight: 800;
     padding: 0;
+    font-size: 1.1rem;
+
 }
 .navbar{
     margin-top: 1rem;

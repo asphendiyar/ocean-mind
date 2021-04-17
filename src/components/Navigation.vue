@@ -12,7 +12,17 @@
         
             <b-form-select class="settings" :value="null" :options="house"></b-form-select>
             
-            <b-button size="sm" class="my-1" type="submit">Включить все</b-button>
+            <b-button size="sm"  v-b-modal.modalOn class="onAll">Включить все</b-button>
+
+            <b-modal id="modalOn" size="md" hide-footer >
+                <div >
+                    <h5>Вы действительно хотите включить все?</h5>
+                    <div class="knopki">
+                        <b-button size="md"  @click="$bvModal.hide('modalOn')"> Отмена </b-button>
+                        <b-button size="md" >Да</b-button>
+                    </div>
+                </div>
+        </b-modal>
 
             <b-nav-item-dropdown text="Добавить" class="settings" >   
                 <b-dropdown-item v-b-modal.modal1>Мастер Хаб</b-dropdown-item>
@@ -157,6 +167,20 @@ export default {
     justify-content: space-evenly;
 }
 
+.onAll{
+    margin: 0;
+}
+h5{
+    font-weight: 600;
+}
+
+.knopki{
+    margin-top: 2rem;
+}
+.knopki button{
+    margin-right: 1rem;
+    padding: 0.5rem;
+}
 button{
     margin-top: 1rem;
     background-color: #0e3c53;

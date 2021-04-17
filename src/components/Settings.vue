@@ -1,5 +1,5 @@
 <template>
-
+    <div class="main">
     <div class="settings">
 
         <ul>
@@ -41,6 +41,8 @@
         </ul>
 
     </div>
+        <b-button  size="sm-3">Сохранить</b-button>
+    </div>
     
 </template>
 
@@ -76,7 +78,6 @@
 <style scoped>
 
     .settings{
-        margin-top: 10%;
         display: flex;
         justify-content: space-evenly;
     }
@@ -107,5 +108,16 @@
     }
     .date select{
         width: 25%;
+    }
+    button{
+        margin-top: 1rem;
+        width: 10%;
+        align-self: center;
+        background-color: #2e596d;
+    }
+    .main{
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
     }
 </style>

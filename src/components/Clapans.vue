@@ -2,37 +2,45 @@
   <div>
   <Navigation/>
   <div class="clapans">      
-    <b-table responsive striped sticky-header="800px" no-border-collapse head-row-variant="dark"  hover ref="my-table" :items="items" :fields="fields">
-      <template v-slot:cell(actions)="row">
-            <b-button size="sm" @click="toggleRowDetails(row, 'status')" class="mr-2">
+    <b-table responsive striped sticky-header="800px" no-border-collapse head-row-variant="dark" ref="my-table" :items="items" :fields="fields">
+      <template class="info" v-slot:cell(actions)="row">
+            <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
             </b-button>
           </template>
 
           <template v-slot:row-details="row">
-            <b-card>
+            <b-card class="information">
+              <div>
               <b-row
                 v-for="(detail, i) in detailsMask"
                 :key="`detail-${i}`"
-                class="mb-2"
+                class="mb-2" 
               >
-              <b-col sm="2" class="text-sm-right"
-              >Статус: {{ row.item[detail] }}
-              </b-col>
-
-              <b-button  size="sm-3" class="mr-2" @click="rowOn(row.item)" >Включить</b-button>
-              <b-button  size="sm-3" class="mr-2" @click="rowOff(row.item)" >Отключить</b-button>
-              <b-button  size="sm-3" class="mr-2">Поменять</b-button>
+              Статус: {{ row.item[detail] }} 
+              
               </b-row>
+              
+              <b-row>
+              <b-button  size="sm-3" class="mr-2" variant="success" @click="rowOn(row.item)" >Включить</b-button>
+              <b-button  size="sm-3" class="mr-2" variant="danger" @click="rowOff(row.item)" >Отключить</b-button>
+              <b-button  size="sm-3" class="mr-2" @click="changeId(row.item)" >Поменять</b-button>
+              </b-row>
+              <b-row>
+                <div class="comment">
+
               <b-form-textarea
                     id="textarea"
                 
                     placeholder="Комментировать..."
-                    size="sm-2"
+                    size="sm-3"
                     rows="2"
                     max-rows="4"
                   ></b-form-textarea>
-                  <b-button  size="sm-3" class="mr-2">Добавить комментарий</b-button>
+                  <b-button class="addComment" size="sm">Добавить комментарий</b-button>
+                </div>
+              </b-row>
+              </div>
             </b-card>
           </template>
     </b-table>
@@ -128,11 +136,15 @@ import Navigation from '@/components/Navigation.vue'
     },
     rowOn(item) {
       this.$set(item, "_rowVariant", "success");
-      this.items.status
+      this.$set(item, "status", "включен")
     },
     rowOff(item) {
       this.$set(item, "_rowVariant", "danger");
+      this.$set(item, "status", "отключен")
     },
+    changeId(item){
+      this.$set(item, "id", Math.floor(Math.random()*1000000))
+    }
   
   }
 
@@ -146,5 +158,21 @@ import Navigation from '@/components/Navigation.vue'
     border-style: solid;
     border-width: medium;
   }
+ 
+  .card{
+    margin-right: 1rem;
+    background-color: rgb(181, 194, 194);
+    border: none;
+  }
   
+  .comment{
+    display: flex;
+    margin-top: 2rem;
+  }
+  .addComment{
+    margin-left: 1rem;
+  }
+  .information > div{
+    margin-left: 1rem;
+  }
 </style>

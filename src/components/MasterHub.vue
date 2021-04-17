@@ -43,14 +43,14 @@ import Navigation from '@/components/Navigation.vue'
 
         ],
         items: [
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен'}
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', id_master_hub: '1521544',  status: 'включен'}
       
         ]
   }

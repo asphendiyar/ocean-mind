@@ -54,6 +54,7 @@
                     <b-form-select :value="null" :options="street"></b-form-select>
                     <b-form-select :value="null" :options="house"></b-form-select>
                     <b-form-select :value="null" :options="podezd"></b-form-select>
+                    <b-form-select :value="null" :options="etazh"></b-form-select>
                     <b-button squared variant="info" @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
@@ -62,8 +63,11 @@
             <div class="content">
                 <div>
                     <h1>Мастер</h1>
+                    <b-form-select :value="null" :options="city"></b-form-select>
+                    <b-form-select :value="null" :options="street"></b-form-select>
+                    <b-form-select :value="null" :options="house"></b-form-select>
                     <b-form-select :value="null" :options="podezd"></b-form-select>
-                    <b-form-select :value="null" :options="id_masterhub"></b-form-select>
+                    <b-form-select :value="null" :options="etazh"></b-form-select>
                     <b-button squared variant="info" @click="openModal('Мастер'); $bvModal.hide('modal2')">Добавить Мастер</b-button>
                 </div>
             </div>
@@ -72,7 +76,16 @@
             <div class="content">
                 <div>
                     <h1>Клапан</h1>
-                    <b-form-select :value="null" :options="id_master"></b-form-select>
+                    <b-form-select :value="null" :options="city"></b-form-select>
+                    <b-form-select :value="null" :options="street"></b-form-select>
+                    <b-form-select :value="null" :options="house"></b-form-select>
+                    <b-form-select :value="null" :options="podezd"></b-form-select>
+                    <b-form-select :value="null" :options="etazh"></b-form-select>
+                    <b-form-select :value="null" :options="office"></b-form-select>
+                    <b-form-select :value="null" :options="lico"></b-form-select>
+                    <b-form-select :value="null" :options="agreement_number"></b-form-select>
+                    <b-form-select :value="null" :options="iin"></b-form-select>
+                    <b-form-select :value="null" :options="payment"></b-form-select>
                     <b-button squared variant="info" @click="openModal('Клапан'); $bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
@@ -111,6 +124,48 @@ export default {
         ],
         podezd: [
           { value: null, text: 'Подъезд', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        etazh: [
+          { value: null, text: 'Этаж', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        fio: [
+          { value: null, text: 'ФИО', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        office: [
+          { value: null, text: 'Оффис/Квартира', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        lico: [
+          { value: null, text: 'Физ. лицо/Юр. лицо', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        agreement_number: [
+          { value: null, text: 'Номер договора', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        iin: [
+          { value: null, text: 'ИИН/БИН', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
+        payment: [
+          { value: null, text: 'Способ оплаты', disabled: true  },
           { value: 'a', text: '5' },
           { value: 'b', text: '6' },
           { value: 'c', text: '7' },

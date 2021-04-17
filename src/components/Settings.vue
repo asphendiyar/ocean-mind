@@ -29,6 +29,9 @@
             <li>
                 <b-form-select v-model="selected" :options="street"></b-form-select>
             </li>
+            <li>
+                <b-form-select v-model="selected" :options="podezd"></b-form-select>
+            </li>
             <li class="date">
                 <h3>с</h3>
                 <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -68,6 +71,12 @@
           { value: 'a', text: 'Кабанбай батыра' },
           { value: 'b', text: 'Абай' },
           { value: 'c', text: 'Республика' },
+        ],
+        podezd: [
+          { value: null, text: 'Подъезд' },
+          { value: 'a', text: '1' },
+          { value: 'b', text: '2' },
+          { value: 'c', text: '3' },
         ]
       }
     }

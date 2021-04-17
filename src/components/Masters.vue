@@ -2,7 +2,7 @@
 <div>
   <Navigation/>
   <div class="masters">
-    <b-table responsive striped head-row-variant="dark" hover :items="items" :fields="fields"></b-table>
+    <b-table responsive  head-row-variant="primary" hover :items="items" :fields="fields"></b-table>
   </div>
 </div>
 </template>

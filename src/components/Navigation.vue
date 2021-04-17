@@ -189,7 +189,6 @@ button{
     margin-top: 1rem;
     background-color: #6c7ae0;
     color: white;
-    border-radius: 0;
 }
 
 .content div{
@@ -204,13 +203,12 @@ select{
 .add{
     background-color: #6c7ae0;
     color: white;
-    border-radius: 0;
+
 }
 
 .settings{
     margin: 0;
     width: 10%;
-    border-radius: 0;
 }
 nav ul{
     width: 100%;

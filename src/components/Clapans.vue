@@ -179,6 +179,7 @@ import Navigation from '@/components/Navigation.vue'
     border-style: solid;
     border-width: thin;
   }
+  
  
   .card{
     margin-right: 1rem;

@@ -126,8 +126,11 @@ import Navigation from '@/components/Navigation.vue'
           { _rowVariant: 'danger', isActive: true, city: "Семей", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '65132156',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
           { _rowVariant: 'success', isActive: true, city: "Уральск", raion: 'Райымбек', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '651621',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
           { _rowVariant: 'danger', isActive: true, city: "Кокшетау", raion: 'Свобода', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '89456',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
-          { _rowVariant: 'success', isActive: true, city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"}
-      
+          { _rowVariant: 'success', isActive: true, city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '"23423"',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Тараз", raion: 'Кордай', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '65451',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"},
+          { _rowVariant: 'success', isActive: true, city: "Тараз", raion: 'Чу', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '25245',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131"}
+          
         ]
   }
   },

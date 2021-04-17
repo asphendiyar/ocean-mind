@@ -21,9 +21,7 @@ export default {
     font-family: 'Montserrat', sans-serif;
   }
   body{
-    background-color: #264da8;
+    background-color: #c4d3f6;
   }
-  .app{
-    background-color: #264da8;
-  }
+  
 </style>

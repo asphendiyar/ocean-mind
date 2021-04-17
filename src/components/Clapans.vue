@@ -160,7 +160,9 @@ import Navigation from '@/components/Navigation.vue'
 </script>
 
 <style scoped>
-
+  
+    
+  
   .clapans{
     margin-top: 1rem;
     border-style: solid;

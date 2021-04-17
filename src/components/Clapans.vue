@@ -166,7 +166,7 @@ import Navigation from '@/components/Navigation.vue'
     }, 
     
     addHistory(){
-      this.history.push("Изменение 1")
+      this.history.push("  Изменение 1")
     }
   
   }
@@ -218,6 +218,9 @@ import Navigation from '@/components/Navigation.vue'
   }
 
   p{
+    margin-top: 1.5rem;
+  }
+  h3{
     margin-top: 1rem;
   }
   #myTable thead {

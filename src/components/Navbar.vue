@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
 *{
-    color: #777676;
+    color: white;
     font-weight: 800;
     padding: 0;
     font-size: 1.1rem;

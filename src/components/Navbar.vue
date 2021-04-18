@@ -65,5 +65,7 @@ nav{
 nav{
     width: 100%;
 }
-
+.navbar-nav > .active > a { 
+    background-color: color ; 
+}
 </style>

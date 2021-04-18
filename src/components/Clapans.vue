@@ -92,13 +92,14 @@ import Navigation from '@/components/Navigation.vue'
             label: 'Подъезд',
           },
           {
-            key: 'etazh',
-            label: 'Этаж',
-          },
-          {
             key: 'shahta',
             label: 'Шахта',
           },
+          {
+            key: 'etazh',
+            label: 'Этаж',
+          },
+  
           {
             key: 'flat',
             label: 'Кв./Офис',

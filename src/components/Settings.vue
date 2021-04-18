@@ -13,6 +13,12 @@
                 <h3>Улица</h3>
             </li>
             <li>
+                <h3>Наименование строения</h3>
+            </li>
+            <li>
+                <h3>Дом</h3>
+            </li>
+            <li>
                 <h3>Подъезд</h3>
             </li>
             <li>
@@ -31,6 +37,12 @@
             </li>
             <li>
                 <b-form-select v-model="selected" :options="street"></b-form-select>
+            </li>
+            <li>
+                <b-form-select v-model="selected" :options="type_house"></b-form-select>
+            </li>
+            <li>
+                <b-form-select v-model="selected" :options="house"></b-form-select>
             </li>
             <li>
                 <b-form-select v-model="selected" :options="podezd"></b-form-select>
@@ -75,6 +87,18 @@
           { value: 'b', text: 'Абай' },
           { value: 'c', text: 'Республика' },
         ],
+         type_house: [
+          { value: null, text: 'Наименование строения' },
+          { value: 'a', text: "ЖК 'Есейтай Сити'" },
+          { value: 'b', text: "ЖК 'Есейтай Сити'" },
+          { value: 'c', text: "ЖК 'Есейтай Сити'" },
+        ],
+         house: [
+          { value: null, text: 'Дом' },
+          { value: 'a', text: '1' },
+          { value: 'b', text: '2' },
+          { value: 'c', text: '3' },
+        ],
         podezd: [
           { value: null, text: 'Подъезд' },
           { value: 'a', text: '1' },
@@ -104,15 +128,11 @@
     }
     div>ul>li{
         list-style: circle;
-    }
-
-    ul{
-        padding: 0;
+        padding: 5px;
     }
     select{
         border-radius: 0;
         padding: 5px;
-        text-align: center;
     }
     .date{
         display: flex;

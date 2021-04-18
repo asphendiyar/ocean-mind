@@ -128,7 +128,6 @@
     }
     div>ul>li{
         list-style: circle;
-        padding: 5px;
     }
     select{
         border-radius: 0;

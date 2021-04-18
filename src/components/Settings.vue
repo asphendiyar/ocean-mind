@@ -132,7 +132,7 @@
     }
     select{
         border-radius: 0;
-        padding: 5px;
+        
     }
     .date{
         display: flex;

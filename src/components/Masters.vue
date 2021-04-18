@@ -61,6 +61,9 @@ import Navigation from './Navigation.vue'
     components: {Navigation},
     data() {
       return {  
+        history:[],
+        count: "",
+        detailsMask: [],
         fields: [
           {
             key: 'city',
@@ -73,6 +76,10 @@ import Navigation from './Navigation.vue'
           {
             key: 'street',
             label: 'Улица',
+          },
+          {
+            key: 'type_house',
+            label: 'Наименование строения',
           },
           {
             key: 'house',
@@ -105,14 +112,14 @@ import Navigation from './Navigation.vue'
 
         ],
         items: [
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен'}
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен',},
+          { _rowVariant: "light",isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "первая",  id_master: '1521544',  status: 'включен'}
       
         ]
   }
@@ -129,7 +136,7 @@ import Navigation from './Navigation.vue'
       this.$set(item, "status", "отключен")
     },
     changeId(item){
-      this.$set(item, "id", Math.floor(Math.random()*1000000))
+      this.$set(item, "id_master", Math.floor(Math.random()*1000000))
     },
     turnOnAllHere(data){
       this.count = data;

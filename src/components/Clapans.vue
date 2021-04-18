@@ -3,7 +3,7 @@
     <h1>{{count}}</h1> 
   <Navigation @turnOnAll="turnOnAllHere" />
   <div class="clapans">     
-    <b-table responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
       <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -26,7 +26,7 @@
               <b-button  size="sm-3"  class="onButton"  @click="rowOn(row.item); addHistory()" >Включить</b-button>
               <b-button  size="sm-3"  class="offButton"  @click="rowOff(row.item); addHistory()" >Отключить</b-button>
               <b-button  size="sm-3" class="mr-2" @click="changeId(row.item); addHistory()" >Поменять</b-button>
-              <b-button  size="sm-3" class="mr-2" @click="changeId(row.item); addHistory()" >Загрузить Историю</b-button>
+              <b-button  size="sm-3" class="mr-2" @click="downloadCSVData" >Загрузить Историю</b-button>
               </b-row>
               <b-row>
                 <div class="comment">
@@ -63,7 +63,7 @@ import Navigation from '@/components/Navigation.vue'
     components: {Navigation},
     data() {
       return {  
-        history:[],
+        history:[{text: "Изменения и еще"}],
         count: "",
         detailsMask: [],
         fields: [
@@ -85,7 +85,7 @@ import Navigation from '@/components/Navigation.vue'
           },
           {
             key: 'podezd',
-            label: 'Дом',
+            label: 'Подъезд',
           },
           {
             key: 'etazh',
@@ -166,8 +166,22 @@ import Navigation from '@/components/Navigation.vue'
     }, 
     
     addHistory(){
-      this.history.push("  Изменение 1")
-    }
+      this.history.push("Hello")
+    },
+    downloadCSVData() {
+    let csv = 'Put,Column,Titles,Here\n';
+    this.history.forEach((row) => {
+            csv += row.join(',');
+            csv += "\n";
+    });
+ 
+    const anchor = document.createElement('a');
+    anchor.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    anchor.target = '_blank';
+    anchor.download = 'история.csv';
+    anchor.click();
+}
+
   
   }
 
@@ -187,8 +201,6 @@ import Navigation from '@/components/Navigation.vue'
   
   .clapans{
     margin-top: 1rem;
-    border-style: solid;
-    border-width: thin;
   }
   
  
@@ -223,8 +235,11 @@ import Navigation from '@/components/Navigation.vue'
   h3{
     margin-top: 1rem;
   }
-  #myTable thead {
-          background-color: #0361cc; 
-          color:white;
-       }
+  
+  .myTable{
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: thin;
+  }
+  
 </style>

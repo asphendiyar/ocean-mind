@@ -3,13 +3,13 @@
         <b-navbar type="">
 
             <b-navbar-nav class="first">
-                <b-nav-item active-class="active" to="/" exact>Клапаны</b-nav-item>
+                <b-nav-item active="true" to="/" exact>Клапаны</b-nav-item>
                 
-                <b-nav-item active-class="active" to="masters" exact>Мастера</b-nav-item>
+                <b-nav-item active="true" to="masters" exact>Мастера</b-nav-item>
 
-                <b-nav-item active-class="active" to="masterhub" exact>Мастер Хабы</b-nav-item>
+                <b-nav-item active="true" to="masterhub" exact>Мастер Хабы</b-nav-item>
 
-                <b-nav-item active-class="active" to="settings" exact>Настройки</b-nav-item>      
+                <b-nav-item active="true" to="settings" exact>Настройки</b-nav-item>      
             </b-navbar-nav>
 
             <b-navbar-nav class="ml-auto">
@@ -65,7 +65,7 @@ nav{
 nav{
     width: 100%;
 }
-.navbar-nav > .active > a { 
+nav  { 
     background-color: color ; 
 }
 </style>

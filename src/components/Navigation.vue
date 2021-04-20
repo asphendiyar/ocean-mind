@@ -68,7 +68,7 @@
                     <b-form-select :value="null" :options="house"></b-form-select>
                     <b-form-select :value="null" :options="podezd"></b-form-select>
                     <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-button squared variant="info" @click="openModal('Мастер'); $bvModal.hide('modal2')">Добавить Мастер</b-button>
+                    <b-button squared variant="info" @click="$bvModal.hide('modal2')">Добавить Мастер</b-button>
                 </div>
             </div>
         </b-modal>
@@ -86,7 +86,7 @@
                     <b-form-select :value="null" :options="agreement_number"></b-form-select>
                     <b-form-select :value="null" :options="iin"></b-form-select>
                     <b-form-select :value="null" :options="payment"></b-form-select>
-                    <b-button squared variant="info" @click="openModal('Клапан'); $bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
+                    <b-button squared variant="info" @click="$bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
         </b-modal>

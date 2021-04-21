@@ -1,6 +1,6 @@
 <template>
     <div class="navbar">
-        <b-navbar type="">
+        <b-navbar  type="">
 
             <b-navbar-nav class="first">
                 <b-nav-item active="true" to="/" exact>Клапаны</b-nav-item>
@@ -19,7 +19,7 @@
     </div>
 </template>
 
-<script>
+<script>        
 export default {
     name: 'Navbar'
 }
@@ -28,8 +28,8 @@ export default {
 <style scoped>
 
 *{
-    color: white;
-    font-weight: 800;
+    color: #000000;
+    font-weight: 500;
     padding: 0;
     font-size: 1.1rem;
 }

@@ -119,7 +119,7 @@
     }
 
     h3{
-        color: #2e596d;
+        color: #030303;
     }
     div ul li{
         display: flex;

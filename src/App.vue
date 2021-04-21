@@ -21,7 +21,7 @@ export default {
     font-family: "Raleway", sans-serif;
   }
   body{
-    background-color: #c4d3f6;
+    background-color: #f1f1f1;
   }
   
 </style>

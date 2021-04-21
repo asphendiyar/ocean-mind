@@ -18,7 +18,7 @@ export default {
 
 <style>
   *{
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Raleway", sans-serif;
   }
   body{
     background-color: #c4d3f6;

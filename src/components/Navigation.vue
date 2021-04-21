@@ -5,17 +5,46 @@
             <b-navbar-nav >
 
             
-            <b-button size="sm"  v-b-modal.modalOn class="onAll" >Включить все</b-button>
+            <b-nav-item-dropdown text="Действия" class="actions" >   
+                <b-dropdown-item v-b-modal.modalOn>Включить все</b-dropdown-item>
+                <b-dropdown-item v-b-modal.modalOff>Выключить все</b-dropdown-item>
+            </b-nav-item-dropdown>
 
             <b-modal id="modalOn" size="md" hide-footer >
-                <div >
+                <div>
                     <h5>Вы действительно хотите включить все?</h5>
                     <div class="knopki">
                         <b-button size="md"  @click="$bvModal.hide('modalOn')"> Отмена </b-button>
-                        <b-button size="md" @click="$bvModal.hide('modalOn'); turnOnAll()">Да</b-button>
+                        <b-button size="md"  @click="$bvModal.hide('modalOn')" v-b-modal.modalPinOn>Да</b-button>
                     </div>
                 </div>
-        </b-modal>
+            </b-modal>
+            <b-modal id="modalOff" size="md" hide-footer >
+                <div>
+                    <h5>Вы действительно хотите выключить все?</h5>
+                    <div class="knopki">
+                        <b-button size="md"  @click="$bvModal.hide('modalOff')"> Отмена </b-button>
+                        <b-button size="md" v-b-modal.modalPinOff  @click="$bvModal.hide('modalOff')">Да</b-button>
+                    </div>
+                </div>
+            </b-modal>
+            <!-- Modal to Pin Code -->
+            <b-modal id="modalPinOn" hide-header size="md" hide-footer >
+                <div>
+                    <div class="knopki">
+                        <b-form-input placeholder="Введите код подтверждения"></b-form-input>
+                        <b-button size="md" @click="$bvModal.hide('modalPinOn')">Подтвердить</b-button>
+                    </div>
+                </div>
+            </b-modal>
+            <b-modal id="modalPinOff" hide-header size="md" hide-footer >
+                <div>
+                    <div class="knopki">
+                         <b-form-input placeholder="Введите код подтверждения"></b-form-input>
+                        <b-button size="md" @click="$bvModal.hide('modalPinOff')" >Подтвердить</b-button>
+                    </div>
+                </div>
+            </b-modal>
 
             <b-nav-item-dropdown text="Добавить" class="add" >   
                 <b-dropdown-item v-b-modal.modal1>Мастер Хаб</b-dropdown-item>
@@ -178,35 +207,7 @@ export default {
     }
     },
     methods: {
-        openModal(message) {
-            const modalTimeoutSeconds = 1.5;
-            const modalId = "modal_id"
-            let modalSetTimeout = null;      
-
-            this.$bvModal.msgBoxConfirm(`${message} успешно добавлен`, {
-                id: modalId
-            })
-            .then(wasOkPressed => {
-                if(wasOkPressed) {
-                /* Do something */
-                } else {
-                /* Do something else */
-                }
-            })
-            .catch(() => {
-                console.log('The modal closed unexpectedly')
-            })
-            .finally(() => {
-                clearTimeout(modalSetTimeout)
-            })
-            
-            modalSetTimeout = setTimeout(() => {
-                this.$bvModal.hide(modalId)
-            }, modalTimeoutSeconds * 1000)
-            },
-        turnOnAll(){
-            this.$emit('turnOnAll', "Включил...")
-        }
+        
     }
 }
 </script>
@@ -255,9 +256,7 @@ nav ul{
     justify-content: space-evenly;
 }
 
-input{
-    width: 25%;
-}
+
 
 nav>ul>li{
     font-weight: 500;

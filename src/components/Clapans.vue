@@ -232,6 +232,7 @@ import Navigation from '@/components/Navigation.vue'
   .card{
     margin-right: 1rem;
     border: none;
+    width: 60%;
   }
 
   .onButton{

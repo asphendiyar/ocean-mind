@@ -266,6 +266,7 @@ nav>ul>li{
     background-color: #9fcdff;
     border-style: solid;
     border-width: thin;
+    border-color: #6c757d;
 }
 
 

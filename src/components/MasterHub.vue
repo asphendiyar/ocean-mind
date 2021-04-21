@@ -2,7 +2,7 @@
 <div>
   <Navigation/>
   <div class="master_hub">
-    <b-table class="myTable" responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" striped hover responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
       <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -110,14 +110,14 @@ import Navigation from '@/components/Navigation.vue'
 
         ],
         items: [
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
-          { _rowVariant: "light",isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен'}
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен',},
+          {isActive: true, type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15', podezd: "2", shahta: "первая", id_master_hub: '1521544',  status: 'включен'}
       
         ]
   }

@@ -144,7 +144,6 @@
         margin-top: 1rem;
         width: 10%;
         align-self: center;
-        background-color: #2e596d;
     }
     .main{
         margin-top: 10%;

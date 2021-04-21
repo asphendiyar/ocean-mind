@@ -130,7 +130,7 @@ import Navigation from '@/components/Navigation.vue'
     
           {
             key: 'type',
-            label: 'Физ. лицо/Юр. лицо',
+            label: 'Физ/Юр. лицо',
             sortable: 'true'
           },
           {

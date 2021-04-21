@@ -59,6 +59,8 @@
                     <b-dropdown-item href="#">Район</b-dropdown-item>
                     <b-dropdown-item href="#"> Улица </b-dropdown-item>
                     <b-dropdown-item href="#">Дом</b-dropdown-item>
+                    <b-dropdown-item href="#">ID Клапана</b-dropdown-item>
+                    <b-dropdown-item href="#">Наименование строения</b-dropdown-item>
                 </b-nav-item-dropdown>
                 
                 <b-form-input  placeholder="Поиск..."></b-form-input>
@@ -70,46 +72,84 @@
         <b-modal id="modal1" size="xl" title="Добавить Мастер Хаб" hide-footer>
             <div class="content">
                 <div>
-                    <h1>Мастер Хаб</h1>
-                    <b-form-select :value="null" :options="city"></b-form-select>
-                    <b-form-select :value="null" :options="raion"></b-form-select>
-                    <b-form-select :value="null" :options="street"></b-form-select>
-                    <b-form-select :value="null" :options="house"></b-form-select>
-                    <b-form-select :value="null" :options="podezd"></b-form-select>
-                    <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-button squared @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
+                    <div class="select_add">
+                        <b-form-select :value="null" :options="city"></b-form-select>
+                        <b-form-select :value="null" :options="raion"></b-form-select>
+                        <b-form-select :value="null" :options="street"></b-form-select>
+                        <b-form-select :value="null" :options="house"></b-form-select>
+                        <b-form-select :value="null" :options="podezd"></b-form-select>
+                        <b-form-select :value="null" :options="shahta"></b-form-select>
+                    </div>
+                    
+                    <div class="input_add">
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                    </div>
                 </div>
+                 <b-button squared @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
             </div>
         </b-modal>
         <b-modal id="modal2" size="xl" title="Добавить Мастер" hide-footer>
             <div class="content">
                 <div>
-                    <h1>Мастер</h1>
-                    <b-form-select :value="null" :options="city"></b-form-select>
-                    <b-form-select :value="null" :options="street"></b-form-select>
-                    <b-form-select :value="null" :options="house"></b-form-select>
-                    <b-form-select :value="null" :options="podezd"></b-form-select>
-                    <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-button squared @click="$bvModal.hide('modal2')">Добавить Мастер</b-button>
+                    <div class="select_add">
+                        <b-form-select :value="null" :options="city"></b-form-select>
+                        <b-form-select :value="null" :options="street"></b-form-select>
+                        <b-form-select :value="null" :options="house"></b-form-select>
+                        <b-form-select :value="null" :options="podezd"></b-form-select>
+                        <b-form-select :value="null" :options="shahta"></b-form-select>
+                        <b-form-select :value="null" :options="etazh"></b-form-select>
+                    </div>
+                    
+                    <div class="input_add">
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                    </div>
+                    
                 </div>
+                <b-button squared @click="$bvModal.hide('modal2')">Добавить Мастер</b-button>
             </div>
         </b-modal>
         <b-modal id="modal3" size="xl" title="Добавить Клапан" hide-footer>
             <div class="content">
                 <div>
-                    <h1>Клапан</h1>
-                    <b-form-select :value="null" :options="city"></b-form-select>
-                    <b-form-select :value="null" :options="street"></b-form-select>
-                    <b-form-select :value="null" :options="house"></b-form-select>
-                    <b-form-select :value="null" :options="podezd"></b-form-select>
-                    <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-form-select :value="null" :options="office"></b-form-select>
-                    <b-form-select :value="null" :options="lico"></b-form-select>
-                    <b-form-select :value="null" :options="agreement_number"></b-form-select>
-                    <b-form-select :value="null" :options="iin"></b-form-select>
-                    <b-form-select :value="null" :options="payment"></b-form-select>
-                    <b-button squared @click="$bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
+                    <div class="select_add">
+                        <b-form-select :value="null" :options="city"></b-form-select>
+                        <b-form-select :value="null" :options="street"></b-form-select>
+                        <b-form-select :value="null" :options="house"></b-form-select>
+                        <b-form-select :value="null" :options="podezd"></b-form-select>
+                        <b-form-select :value="null" :options="shahta"></b-form-select>
+                        <b-form-select :value="null" :options="etazh"></b-form-select>
+                        <b-form-select :value="null" :options="office"></b-form-select>
+                        <b-form-select :value="null" :options="lico"></b-form-select>
+                        <b-form-input v-model="text" placeholder="ФИО"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Номер договора"></b-form-input>
+                        <b-form-input v-model="text" placeholder="ИИН/БИН"></b-form-input>
+                        <b-form-select :value="null" :options="payment"></b-form-select>
+                    </div>
+                    
+                    <div class="input_add">
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        <b-form-input v-model="text" placeholder="Свой вариант"></b-form-input>
+                        
+                        
+                    </div>
+                   
                 </div>
+                 <b-button squared @click="$bvModal.hide('modal3')">Добавить Клапан</b-button>
             </div>
         </b-modal>
     </div>
@@ -150,6 +190,12 @@ export default {
           { value: 'b', text: '6' },
           { value: 'c', text: '7' },
         ],
+        shahta: [
+          { value: null, text: 'Шахта', disabled: true  },
+          { value: 'a', text: '5' },
+          { value: 'b', text: '6' },
+          { value: 'c', text: '7' },
+        ],
         etazh: [
           { value: null, text: 'Этаж', disabled: true  },
           { value: 'a', text: '5' },
@@ -163,13 +209,13 @@ export default {
           { value: 'c', text: '7' },
         ],
         office: [
-          { value: null, text: 'Оффис/Квартира', disabled: true  },
+          { value: null, text: 'Офис/Квартира', disabled: true  },
           { value: 'a', text: '5' },
           { value: 'b', text: '6' },
           { value: 'c', text: '7' },
         ],
         lico: [
-          { value: null, text: 'Физ. лицо/Юр. лицо', disabled: true  },
+          { value: null, text: 'Физ/Юр. лицо', disabled: true  },
           { value: 'a', text: '5' },
           { value: 'b', text: '6' },
           { value: 'c', text: '7' },
@@ -214,10 +260,26 @@ export default {
 
 <style scoped>
 
+.content>div{
+    display: flex;
+    justify-content: center;
+}
+
 .content{
     display: flex;
-    justify-content: space-evenly;
-    color: white;
+    flex-direction: column;
+}
+.content button{
+    align-self: center;
+    margin-bottom: 2rem;
+}
+.content h2{
+    margin-top: 1rem;
+    font-weight: 0;
+}
+
+.select_add input{
+    margin-top: 1rem;
 }
 
 .onAll{
@@ -240,7 +302,7 @@ button{
 }
 
 .content div{
-    padding: 3rem;
+    margin: 1rem;
 }
 .navigation{
     margin-top: 3rem;
@@ -248,8 +310,14 @@ button{
 select{
     margin-top: 1rem;
 }
+.input_add input{
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
 
-
+.input_add{
+    margin-right: 1rem;
+}
 nav ul{
     width: 100%;
     display: flex;

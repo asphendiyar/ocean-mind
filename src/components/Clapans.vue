@@ -3,7 +3,12 @@
     <h1>{{count}}</h1> 
   <Navigation @turnOnAll="turnOnAllHere" />
   <div class="clapans">     
-    <b-table class="myTable" striped hover responsive id="myTable" sticky-header="650px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" data-filter-control="input" striped hover responsive id="myTable" sticky-header="650px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+     <template slot="top-row" slot-scope="{ fields }">
+      <td v-for="field in fields" :key="field.key">
+        <input class="input_in_table"  v-model="filters[field.key]" :placeholder="'Поиск'">
+      </td>
+    </template>
       <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -61,8 +66,26 @@ import Navigation from '@/components/Navigation.vue'
   export default {
     name: 'Clapans',
     components: {Navigation},
+    computed: {
+    filtered () {
+      const filtered = this.items.filter(item => {
+        return Object.keys(this.filters).every(key =>
+            String(item[key]).includes(this.filters[key]))
+      })
+      return filtered.length > 0 ? filtered : [{
+        id: '',
+        issuedBy: '',
+        issuedTo: ''
+      }]
+    }},
     data() {
       return {  
+        filters: {
+          id: '',
+          issuedBy: '',
+          issuedTo: ''
+        },
+        filter: null,
         history:[],
         count: "",
         detailsMask: [],
@@ -70,7 +93,8 @@ import Navigation from '@/components/Navigation.vue'
           {
             key: 'city',
             label: 'Город',
-            sortable: 'true'
+            sortable: 'true',
+             
           },
           {
             key: 'raion',
@@ -223,7 +247,13 @@ import Navigation from '@/components/Navigation.vue'
   @import '~bootstrap-vue/dist/bootstrap-vue.css';
     
     $red: #8f3333;
-  
+  .input_in_table{
+    border-radius: 5px;
+    width: 3.7rem;
+    font-size: 12px;
+    border-width: thin;
+    overflow: hidden;
+  }
   .clapans{
     margin-top: 1rem;
   }

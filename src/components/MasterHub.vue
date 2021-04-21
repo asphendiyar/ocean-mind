@@ -3,6 +3,11 @@
   <Navigation/>
   <div class="master_hub">
     <b-table class="myTable" striped hover responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+      <template slot="top-row" slot-scope="{ fields }">
+      <td v-for="field in fields" :key="field.key">
+        <input class="input_in_table"  v-model="filters[field.key]" :placeholder="'Поиск'">
+      </td>
+    </template>
       <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -60,8 +65,27 @@ import Navigation from '@/components/Navigation.vue'
   export default {
     name: 'MasterHub',
     components: {Navigation},
+    computed: {
+    filtered () {
+      const filtered = this.items.filter(item => {
+        return Object.keys(this.filters).every(key =>
+            String(item[key]).includes(this.filters[key]))
+      })
+      return filtered.length > 0 ? filtered : [{
+        id: '',
+        issuedBy: '',
+        issuedTo: ''
+      }]
+    }
+  },
     data() {
       return {  
+        filters: {
+          id: '',
+          issuedBy: '',
+          issuedTo: ''
+        },
+        filter: null,
         history:[],
         count: "",
         detailsMask: [],
@@ -169,7 +193,13 @@ import Navigation from '@/components/Navigation.vue'
 </script>
 
 <style scoped>
-
+.input_in_table{
+    border-radius: 5px;
+    width: 3.7rem;
+    font-size: 12px;
+    border-width: thin;
+    overflow: hidden;
+  }
   
   .master_hub{
     margin-top: 1rem;

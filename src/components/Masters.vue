@@ -2,7 +2,12 @@
 <div>
   <Navigation/>
   <div class="masters">
-    <b-table class="myTable" striped hover responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" :filter="filter" :items="filtered" :fields="fields" striped hover responsive id="myTable" sticky-header="650px" no-border-collapse head-row-variant="primary" ref="my-table" >
+    <template slot="top-row" slot-scope="{ fields }">
+      <td v-for="field in fields" :key="field.key">
+        <input class="input_in_table"  v-model="filters[field.key]" :placeholder="'Поиск'">
+      </td>
+    </template>
     <template class="info" v-slot:cell(actions)="row">
             <b-button size="sm" @click="toggleRowDetails(row, 'status')">
               {{ row.detailsShowing ? 'Скрыть' : 'Редактировать'}} 
@@ -59,8 +64,27 @@ import Navigation from './Navigation.vue'
   export default {
     name: 'Masters',
     components: {Navigation},
+    computed: {
+    filtered () {
+      const filtered = this.items.filter(item => {
+        return Object.keys(this.filters).every(key =>
+            String(item[key]).includes(this.filters[key]))
+      })
+      return filtered.length > 0 ? filtered : [{
+        id: '',
+        issuedBy: '',
+        issuedTo: ''
+      }]
+    }
+  },
     data() {
       return {  
+        filters: {
+          id: '',
+          issuedBy: '',
+          issuedTo: ''
+        },
+        filter: null,
         history:[],
         count: "",
         detailsMask: [],
@@ -68,68 +92,58 @@ import Navigation from './Navigation.vue'
           {
             key: 'city',
             label: 'Город',
-            sortable: 'true'
           },
           {
             key: 'raion',
             label: 'Район',
-            sortable: 'true'
           },
           {
             key: 'street',
             label: 'Улица',
-            sortable: 'true'
           },
           {
             key: 'type_house',
             label: 'Наименование строения',
-            sortable: 'true'
+            
           },
           {
             key: 'house',
             label: 'Дом',
-            sortable: 'true'
           },
           {
             key: 'podezd',
             label: 'Подъезд',
-            sortable: 'true'
           },
           {
             key: 'shahta',
             label: 'Шахта',
-            sortable: 'true'
           },
           {
             key: 'etazh',
             label: 'Этаж',
-            sortable: 'true'
           },
           {
             key: 'id_master',
             label: 'ID Мастера',
-            sortable: 'true'
           },
           {
             key: 'status',
             label: 'Статус',
-            sortable: 'true'
           },
           {
             key: 'actions',
             label: ''
           }
-
         ],
         items: [
+          { isActive: true, city: "Астана", raion: 'Есиль', street: 'Наурызбай',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
+          { isActive: true, city: "Караганда", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
+          { isActive: true, city: "Шымкент", raion: 'Абай', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
           { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
+          { isActive: true, city: "Шымкент", raion: 'Есиль', street: 'Наурызбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
+          { isActive: true, city: "Астана", raion: 'Абай', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
           { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен',},
-          { isActive: true, city: "Алматы", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен'}
+          { isActive: true, city: "Семей", raion: 'Есиль', street: 'Кабанбай Батыр',  type_house: "ЖК 'Есентай Сити'",house: '15', podezd: '1', etazh: '9', shahta: "2",  id_master: '1521544',  status: 'включен'}
       
         ]
   }
@@ -169,11 +183,16 @@ import Navigation from './Navigation.vue'
     anchor.click();
 }
   }}
-
 </script>
 
 <style scoped>
-
+  .input_in_table{
+    border-radius: 5px;
+    width: 3.7rem;
+    font-size: 12px;
+    border-width: thin;
+    overflow: hidden;
+  }
   .masters{
     margin-top: 1rem;
   }
@@ -181,7 +200,6 @@ import Navigation from './Navigation.vue'
     margin-right: 1rem;
     border: none;
   }
-
   .onButton{
     margin-right: 1rem;
     background-color: #629e6c;
@@ -201,7 +219,6 @@ import Navigation from './Navigation.vue'
   .information > div{
     margin-left: 1rem;
   }
-
   p{
     margin-top: 1.5rem;
   }

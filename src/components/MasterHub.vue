@@ -2,7 +2,7 @@
 <div>
   <Navigation/>
   <div class="master_hub">
-    <b-table class="myTable" striped hover responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" striped hover responsive id="myTable" sticky-header="800px" no-border-collapse head-row-variant="primary" ref="my-table" :filter="filter" :items="filtered" :fields="fields">
       <template slot="top-row" slot-scope="{ fields }">
       <td v-for="field in fields" :key="field.key">
         <input class="input_in_table"  v-model="filters[field.key]" :placeholder="'Поиск'">

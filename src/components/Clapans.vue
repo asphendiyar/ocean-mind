@@ -3,7 +3,7 @@
     <h1>{{count}}</h1> 
   <Navigation @turnOnAll="turnOnAllHere" />
   <div class="clapans">     
-    <b-table class="myTable" data-filter-control="input" striped hover responsive id="myTable" sticky-header="650px" no-border-collapse head-row-variant="primary" ref="my-table" :items="items" :fields="fields">
+    <b-table class="myTable" data-filter-control="input" striped hover responsive id="myTable" sticky-header="650px" no-border-collapse head-row-variant="primary" ref="my-table" :filter="filter" :items="filtered" :fields="fields">
      <template slot="top-row" slot-scope="{ fields }">
       <td v-for="field in fields" :key="field.key">
         <input class="input_in_table"  v-model="filters[field.key]" :placeholder="'Поиск'">

@@ -242,7 +242,6 @@ h5{
 }
 button{
     margin-top: 1rem;
-    background-color: #6c7ae0;
     color: white;
 }
 
@@ -256,7 +255,6 @@ select{
     margin-top: 1rem;
 }
 .add{
-    background-color: #6c7ae0;
     color: white;
 
 }
@@ -277,8 +275,8 @@ input{
 nav>ul>li{
     font-weight: 500;
     border-radius: 5px;
-    background-color: #6c7ae0;
     color: white;
+    background-color: #6c757d
 }
 
 </style>

@@ -249,6 +249,8 @@ import Navigation from '@/components/Navigation.vue'
     border-radius: 1rem;
     border-style: solid;
     border-width: thin;
+    box-shadow: 0px 2px 18px 0px rgba(44, 45, 46, 0.5);
+    display: block;
   }
   
 </style>

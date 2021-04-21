@@ -68,42 +68,52 @@ import Navigation from './Navigation.vue'
           {
             key: 'city',
             label: 'Город',
+            sortable: 'true'
           },
           {
             key: 'raion',
             label: 'Район',
+            sortable: 'true'
           },
           {
             key: 'street',
             label: 'Улица',
+            sortable: 'true'
           },
           {
             key: 'type_house',
             label: 'Наименование строения',
+            sortable: 'true'
           },
           {
             key: 'house',
             label: 'Дом',
+            sortable: 'true'
           },
           {
             key: 'podezd',
             label: 'Подъезд',
+            sortable: 'true'
           },
           {
             key: 'shahta',
             label: 'Шахта',
+            sortable: 'true'
           },
           {
             key: 'etazh',
             label: 'Этаж',
+            sortable: 'true'
           },
           {
             key: 'id_master',
             label: 'ID Мастера',
+            sortable: 'true'
           },
           {
             key: 'status',
             label: 'Статус',
+            sortable: 'true'
           },
           {
             key: 'actions',
@@ -199,9 +209,12 @@ import Navigation from './Navigation.vue'
     margin-top: 1rem;
   }
   
+  
   .myTable{
     border-radius: 1rem;
     border-style: solid;
     border-width: thin;
+    box-shadow: 0px 2px 18px 0px rgba(44, 45, 46, 0.5);
+    display: block;
   }
 </style>

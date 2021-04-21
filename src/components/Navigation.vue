@@ -263,7 +263,9 @@ nav>ul>li{
     font-weight: 500;
     border-radius: 5px;
     color: white;
-    background-color: #9fcdff
+    background-color: #9fcdff;
+    border-style: solid;
+    border-width: thin;
 }
 
 

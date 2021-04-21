@@ -70,88 +70,104 @@ import Navigation from '@/components/Navigation.vue'
           {
             key: 'city',
             label: 'Город',
+            sortable: 'true'
           },
           {
             key: 'raion',
             label: 'Район',
+            sortable: 'true'
           },
           {
             key: 'street',
             label: 'Улица',
+            sortable: 'true'
           },
           {
             key: 'type_house',
             label: 'Наименование строения',
+            sortable: 'true'
           },
           {
             key: 'house',
             label: 'Дом',
+            sortable: 'true'
           },
           {
             key: 'podezd',
             label: 'Подъезд',
+            sortable: 'true'
           },
           {
             key: 'shahta',
             label: 'Шахта',
+            sortable: 'true'
           },
           {
             key: 'etazh',
             label: 'Этаж',
-          },
-  
-          {
-            key: 'flat',
-            label: 'Кв./Офис',
-            
-          },
-          {
-            key: 'id',
-            label: 'ID Клапана',
+            sortable: 'true'
           },
           {
             key: 'status',
             label: 'Статус',
+            sortable: 'true'
           },
           {
             key: 'actions',
             label: ''
           },
           {
+            key: 'flat',
+            label: 'Кв./Офис',
+            sortable: 'true'
+            
+          },
+          {
+            key: 'id',
+            label: 'ID Клапана',
+            sortable: 'true'
+          },
+    
+          {
             key: 'type',
-            label: 'Физ. лицо/Юр. лицо'
+            label: 'Физ. лицо/Юр. лицо',
+            sortable: 'true'
           },
           {
             key: 'agreement_number',
-            label: 'Номер Договора'
+            label: 'Номер Договора',
+            sortable: 'true'
           },
           {
             key: 'snm',
-            label: 'ФИО'
+            label: 'ФИО',
+            sortable: 'true'
           },
           {
             key: 'iin',
-            label: 'ИИН/БИН'
+            label: 'ИИН/БИН',
+            sortable: 'true'
           },
           {
             key: 'payment',
-            label: 'Способ оплаты'
+            label: 'Способ оплаты',
+            sortable: 'true'
           }
           
 
         ],
         items: [
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2', etazh: '9', flat: '15',  id: '158626',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Нурсултан", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '3526215',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Шымкент", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '1616565',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Караганда", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651652',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Семей", raion: 'Абай', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '65132156',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Уральск", raion: 'Райымбек', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651621',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Кокшетау", raion: 'Свобода', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '89456',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '"23423"',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Тараз", raion: 'Кордай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '65451',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
-          {isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Тараз", raion: 'Чу', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '25245',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"}
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2', etazh: '9', flat: '15',  id: '158626',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Нурсултан", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '3526215',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Шымкент", raion: 'Абай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '1616565',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Караганда", raion: 'Есиль', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651652',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Семей", raion: 'Абай', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '65132156',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Уральск", raion: 'Райымбек', street: 'Кабанбай Батыр', house: '15',podezd: '2', etazh: '9', flat: '15',  id: '651621',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Кокшетау", raion: 'Свобода', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '89456',  status: 'отключен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Талдыкорган", raion: 'Ленин', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '32151',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Алматы", raion: 'Медеуский', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '"23423"',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Тараз", raion: 'Кордай', street: 'Кабанбай Батыр', house: '15', podezd: '2',etazh: '9', flat: '15',  id: '65451',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"},
+           { _rowVariant: "light", isActive: true, shahta: "первая",  type_house: "ЖК 'Есентай Сити'", city: "Тараз", raion: 'Чу', street: 'Кабанбай Батыр', house: '15', etazh: '9', flat: '15',  id: '25245',  status: 'включен', type: 'Физическое лицо', agreement_number: "152051651", snm: "Иванов Иван Иванович", iin: "00525028156", bin: "168132138131", payment: "Карта"}
           
         ]
   }

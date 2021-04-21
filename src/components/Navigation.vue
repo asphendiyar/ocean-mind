@@ -4,13 +4,6 @@
         <b-navbar class="mx-auto">
             <b-navbar-nav >
 
-            <b-form-select class="settings" :value="null" :options="city"></b-form-select>
-
-            <b-form-select class="settings" :value="null" :options="raion"></b-form-select> 
-
-            <b-form-select class="settings" :value="null" :options="street"></b-form-select>
-        
-            <b-form-select class="settings" :value="null" :options="house"></b-form-select>
             
             <b-button size="sm"  v-b-modal.modalOn class="onAll" >Включить все</b-button>
 
@@ -55,7 +48,7 @@
                     <b-form-select :value="null" :options="house"></b-form-select>
                     <b-form-select :value="null" :options="podezd"></b-form-select>
                     <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-button squared variant="info" @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
+                    <b-button squared @click="openModal('Мастер Хаб'); $bvModal.hide('modal1')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
         </b-modal>
@@ -68,7 +61,7 @@
                     <b-form-select :value="null" :options="house"></b-form-select>
                     <b-form-select :value="null" :options="podezd"></b-form-select>
                     <b-form-select :value="null" :options="etazh"></b-form-select>
-                    <b-button squared variant="info" @click="$bvModal.hide('modal2')">Добавить Мастер</b-button>
+                    <b-button squared @click="$bvModal.hide('modal2')">Добавить Мастер</b-button>
                 </div>
             </div>
         </b-modal>
@@ -86,7 +79,7 @@
                     <b-form-select :value="null" :options="agreement_number"></b-form-select>
                     <b-form-select :value="null" :options="iin"></b-form-select>
                     <b-form-select :value="null" :options="payment"></b-form-select>
-                    <b-button squared variant="info" @click="$bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
+                    <b-button squared @click="$bvModal.hide('modal3')">Добавить Мастер Хаб</b-button>
                 </div>
             </div>
         </b-modal>
@@ -242,7 +235,7 @@ h5{
 }
 button{
     margin-top: 1rem;
-    color: white;
+    
 }
 
 .content div{
@@ -254,20 +247,14 @@ button{
 select{
     margin-top: 1rem;
 }
-.add{
-    color: white;
 
-}
 
-.settings{
-    margin: 0;
-    width: 10%;
-}
 nav ul{
     width: 100%;
     display: flex;
-    justify-content: space-between
+    justify-content: space-evenly;
 }
+
 input{
     width: 25%;
 }
@@ -276,7 +263,8 @@ nav>ul>li{
     font-weight: 500;
     border-radius: 5px;
     color: white;
-    background-color: #6c757d
+    background-color: #9fcdff
 }
+
 
 </style>
